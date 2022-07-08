@@ -1,0 +1,13 @@
+.input {
+    background-color: rgb(165, 207, 152);
+    border: none;
+    font-size: 30px;
+    padding: 5px 10px;
+    border-radius: 0px 0px 15px 15px;
+    box-shadow: 2px 2px 8px rgb(135, 133, 133);
+    transition: 0.3s;
+}
+
+.input:hover {
+    background-color: rgb(178, 230, 164);
+}
