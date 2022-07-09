@@ -22,15 +22,26 @@ class App extends Component {
     });
   }
 
-  render() {
+  onDelete = (id) => {
+    this.setState(({data}) => {
+      let deletedItem = data.filter(item => {
+        return item.id === id
+      })
+      console.log(deletedItem);
+      const newArr = [...data].splice(deletedItem, 1);
+      return {data: newArr}
+    })
+  }
 
+  render() {
+    let {data} = this.state
     return (
       <div>
         <div className='header'>
         <Input addItem={this.addItem}/>
         </div>
         <main className='main'>
-          <TodoList />
+          <TodoList data={data} delete={this.onDelete}/>
         </main>
       </div>
     );

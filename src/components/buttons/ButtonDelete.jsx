@@ -2,9 +2,9 @@ import React from 'react';
 
 import './ButtonDelete.css';
 
-const ButtonDelete = () => {
+const ButtonDelete = (props) => {
   return (
-    <button className='btn-delete'>X</button>
+    <button className='btn-delete' onClick={props.delete}>X</button>
   );
 }
 

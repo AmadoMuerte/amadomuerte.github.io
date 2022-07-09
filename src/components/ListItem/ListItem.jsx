@@ -3,11 +3,15 @@ import ButtonDelete from '../buttons/ButtonDelete';
 
 import './ListItem.css';
 
-const ListItem = () => {
+const ListItem = (props) => {
+    
+    let onDelete = () => {
+       return props.delete(props.item.id);
+    }
     return (
         <li className='list__item'>
-            <p>Hello</p>
-            <ButtonDelete />
+            <p>{props.item.value}</p>
+            <ButtonDelete delete={onDelete}/>
         </li>
     );
 }
