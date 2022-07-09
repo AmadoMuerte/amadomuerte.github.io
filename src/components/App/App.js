@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Input from '../Input/Input';
+import TodoList from '../TodoList/TodoList';
 
 class App extends Component {
   constructor(props) {
@@ -17,7 +18,8 @@ class App extends Component {
 
     return (
       <div className='header'>
-        <Input/>
+        <Input />
+        <TodoList />
       </div>
     );
   }
