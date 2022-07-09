@@ -1,10 +1,12 @@
 import React from 'react';
 
+import './ButtonAdd.css'; 
+
 const ButtonAdd = () => {
     return (
-        <div>
-            
-        </div>
+        <button className='btn-add'>
+            +
+        </button>
     );
 }
 

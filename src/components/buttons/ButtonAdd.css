@@ -1,0 +1,14 @@
+.btn-add {
+    background-color: rgb(185, 185, 185);
+    color: white;
+    padding: 5px 10px;
+    font-size: 30px;
+    border-radius: 0px 0px 15px 0px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-add:hover {
+    background-color: rgb(154, 151, 151);
+}
