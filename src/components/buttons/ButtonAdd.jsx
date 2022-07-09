@@ -2,9 +2,9 @@ import React from 'react';
 
 import './ButtonAdd.css'; 
 
-const ButtonAdd = () => {
+const ButtonAdd = (props) => {
     return (
-        <button className='btn-add'>
+        <button className='btn-add' onClick={props.addItem}>
             +
         </button>
     );

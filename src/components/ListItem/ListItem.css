@@ -8,6 +8,7 @@
     align-items: center;
     max-width: 500px;
     box-shadow: 5px 2px 4px rgb(187, 184, 184);
+    transition: 0.3s;
 }
 
 .list__item:hover {
