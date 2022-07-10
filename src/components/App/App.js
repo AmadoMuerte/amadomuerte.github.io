@@ -20,6 +20,7 @@ class App extends Component {
       const newArr = [...data, item];
       return {data: newArr}
     });
+    this.updateStorage();
   }
 
   onDelete = (id) => {
@@ -33,7 +34,29 @@ class App extends Component {
     })
   }
 
+  updateStorage = () => {
+    const data = this.state.data;
+    for(let i = 0; i < data.length; i++) {
+      let item = JSON.stringify(data[i]);
+      localStorage.setItem(`item${i}`, item);
+    }
+  }
+
+  getStorage = () => {
+    let storageData = [];
+
+    for(let i = 0; i <= localStorage.length; i++) {
+      let item = localStorage.getItem(`item${i}`);
+      item = JSON.parse(item);
+      storageData.push(item);
+    }
+    this.setState(() => {
+      return {data: storageData}
+    });
+  }
+
   render() {
+    
     let {data} = this.state
     return (
       <div>
