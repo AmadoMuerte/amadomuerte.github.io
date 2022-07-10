@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: [ {value: 'hello world', id: 2}, ],
+      data: JSON.parse(localStorage.getItem('items')) || [],
     }
   }
 
@@ -20,7 +20,6 @@ class App extends Component {
       const newArr = [...data, item];
       return {data: newArr}
     });
-    this.updateStorage();
   }
 
   onDelete = (id) => {
@@ -35,28 +34,12 @@ class App extends Component {
   }
 
   updateStorage = () => {
-    const data = this.state.data;
-    for(let i = 0; i < data.length; i++) {
-      let item = JSON.stringify(data[i]);
-      localStorage.setItem(`item${i}`, item);
-    }
+    const data = JSON.stringify(this.state.data);
+    localStorage.setItem(`items`, data);
   }
 
-  getStorage = () => {
-    let storageData = [];
-
-    for(let i = 0; i <= localStorage.length; i++) {
-      let item = localStorage.getItem(`item${i}`);
-      item = JSON.parse(item);
-      storageData.push(item);
-    }
-    this.setState(() => {
-      return {data: storageData}
-    });
-  }
 
   render() {
-    
     let {data} = this.state
     return (
       <div>
@@ -64,9 +47,12 @@ class App extends Component {
         <Input addItem={this.addItem}/>
         </div>
         <main className='main'>
+          
           <TodoList data={data} delete={this.onDelete}/>
+          {this.updateStorage()}
         </main>
       </div>
+      
     );
   }
 }
