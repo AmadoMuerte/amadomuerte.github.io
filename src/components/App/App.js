@@ -24,13 +24,11 @@ class App extends Component {
 
   onDelete = (id) => {
     this.setState(({data}) => {
-      let deletedItem = data.filter(item => {
-        return item.id === id
+       let newArr = data.filter((item) => {
+        return item.id !== id;
+       })
+       return {data: newArr}
       })
-      console.log(deletedItem);
-      const newArr = [...data].splice(deletedItem, 1);
-      return {data: newArr}
-    })
   }
 
   updateStorage = () => {
