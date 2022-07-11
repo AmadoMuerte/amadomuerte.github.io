@@ -14,7 +14,9 @@ class App extends Component {
   }
 
   addItem = (value) => {
-    if (value) {
+    let str = value.replace(/\s+/g, '');
+    
+    if (str) {
       let id = Math.floor(Math.random() * 500) + value;
 
       let item = {value: value, id: id}
