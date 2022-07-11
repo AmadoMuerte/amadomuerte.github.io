@@ -7,19 +7,22 @@ import TodoList from '../TodoList/TodoList';
 class App extends Component {
   constructor(props) {
     super(props)
+    let storage = JSON.parse(localStorage.getItem('items'));
     this.state = {
-      data: JSON.parse(localStorage.getItem('items')) || [],
+      data:  storage || [],
     }
   }
 
   addItem = (value) => {
-    let id = Math.floor(Math.random() * 500) + value;
+    if (value) {
+      let id = Math.floor(Math.random() * 500) + value;
 
-    let item = {value: value, id: id}
-    this.setState(({data}) => {
-      const newArr = [...data, item];
-      return {data: newArr}
-    });
+      let item = {value: value, id: id}
+      this.setState(({data}) => {
+        const newArr = [item, ...data];
+        return {data: newArr}
+      });
+    }
   }
 
   onDelete = (id) => {
