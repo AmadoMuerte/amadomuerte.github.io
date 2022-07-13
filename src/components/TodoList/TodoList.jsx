@@ -9,8 +9,16 @@ const TodoList = (props) => {
     props.delete(id);
   }
 
+  let onComplete = (id, complete) => {
+    props.onComplete(id, complete);
+  }
+
   let items = props.data.map(item => {
-    return <ListItem item={item} key={item.id} delete={onDelete} />
+    return <ListItem 
+            item={item} 
+            key={item.id} 
+            delete={onDelete} 
+            onComplete={onComplete}/>
   });
 
   return (

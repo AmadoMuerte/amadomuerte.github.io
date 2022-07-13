@@ -19,7 +19,7 @@ class App extends Component {
     if (str) {
       let id = Math.floor(Math.random() * 500) + value;
 
-      let item = {value: value, id: id}
+      let item = {value: value, id: id, complete: false}
       this.setState(({data}) => {
         const newArr = [item, ...data];
         return {data: newArr}
@@ -34,6 +34,19 @@ class App extends Component {
        })
        return {data: newArr}
       })
+  }
+
+  onComplete = (id, complete) => {
+    this.setState(({data}) => {
+      let newArr = data.map(item => {
+        if (item.id === id) {
+          item.complete = complete
+        }
+        return item;
+      })
+
+      return {data: newArr}
+     })
   }
 
   updateStorage = () => {
@@ -51,7 +64,11 @@ class App extends Component {
         </div>
         <main className='main'>
           
-          <TodoList data={data} delete={this.onDelete}/>
+          <TodoList 
+            data={data} 
+            delete={this.onDelete} 
+            onComplete={this.onComplete}/>
+
           {this.updateStorage()}
         </main>
       </div>

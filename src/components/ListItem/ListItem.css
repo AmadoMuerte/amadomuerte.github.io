@@ -12,6 +12,11 @@
     transition: 0.3s;
 }
 
+.list__item--complete {
+    text-decoration: line-through;
+    text-decoration-color: rgb(123, 121, 121);
+}
+
 .list__item:hover {
     background-color: rgb(154, 151, 151);
 }
