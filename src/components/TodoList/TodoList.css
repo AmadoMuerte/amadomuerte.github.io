@@ -2,3 +2,11 @@
     margin-top: 10px;
     list-style-type: none;
 }
+
+.list-item__nothing {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(105, 109, 107);
+    text-shadow: 1px 1px 2px rgb(240, 222, 222);
+}

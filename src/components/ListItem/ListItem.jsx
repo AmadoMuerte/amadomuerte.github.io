@@ -16,16 +16,19 @@ const ListItem = (props) => {
     props.onComplete(id, !complete);
   }
 
-  let classes = '';
+  let classDescription = '';
+  let classLi = 'list__item';
 
   if (props.item.complete) {
-    classes += 'list__item--complete';
+    classDescription += 'list__item--complete';
+    classLi += ' list__item-bg';
   }
 
     return (
       
-      <li className='list__item' onClick={onComplete}>
-        <p className={classes}>{props.item.value}</p>
+      <li className={classLi} onClick={onComplete}>
+        <p className={classDescription}>{props.item.value}</p>
+        
         <ButtonDelete delete={onDelete} />
       </li>
       

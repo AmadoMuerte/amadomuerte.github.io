@@ -13,17 +13,23 @@ const TodoList = (props) => {
     props.onComplete(id, complete);
   }
 
-  let items = props.data.map(item => {
-    return <ListItem 
-            item={item} 
-            key={item.id} 
-            delete={onDelete} 
-            onComplete={onComplete}/>
-  });
+  let items;
+
+  if (props.data.length >= 1) {
+    items = props.data.map(item => {
+      return <ListItem 
+              item={item} 
+              key={item.id} 
+              delete={onDelete} 
+              onComplete={onComplete}/>
+    });
+  } else {
+    items = <p className='list-item__nothing'>У вас ещё нет заметок! <br/> Вы можете ввести её выше</p>
+  }
 
   return (
     <ul className='list'>
-      {items}
+        {items}
     </ul>
   );
 }
