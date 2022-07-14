@@ -24,7 +24,7 @@ const TodoList = (props) => {
               onComplete={onComplete}/>
     });
   } else {
-    items = <p className='list-item__nothing'>У вас ещё нет заметок! <br/> Вы можете ввести её выше</p>
+    items = <p className='list-item__nothing'>в вашем списке ничего нет.</p>
   }
 
   return (

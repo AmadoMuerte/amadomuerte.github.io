@@ -38,6 +38,7 @@ class App extends Component {
 
   onComplete = (id, complete) => {
     this.setState(({data}) => {
+      
       let newArr = data.map(item => {
         if (item.id === id) {
           item.complete = complete
@@ -60,15 +61,13 @@ class App extends Component {
     return (
       <div>
         <div className='header'>
-        <Input addItem={this.addItem}/>
+          <Input addItem={this.addItem}/>
         </div>
         <main className='main'>
-          
           <TodoList 
             data={data} 
             delete={this.onDelete} 
             onComplete={this.onComplete}/>
-
           {this.updateStorage()}
         </main>
       </div>
