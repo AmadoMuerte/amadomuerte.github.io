@@ -16,16 +16,16 @@ const ListItem = (props) => {
     props.onComplete(id, !complete);
   }
 
-  let classes = 'list__item';
+  let classes = '';
 
   if (props.item.complete) {
-    classes += ' list__item--complete';
+    classes += 'list__item--complete';
   }
 
     return (
       
-      <li className={classes} onClick={onComplete}>
-        <p>{props.item.value}</p>
+      <li className='list__item' onClick={onComplete}>
+        <p className={classes}>{props.item.value}</p>
         <ButtonDelete delete={onDelete} />
       </li>
       
