@@ -61,6 +61,7 @@ class App extends Component {
     return (
       <>
         <div className='header'>
+          <p>Todo - list</p>
           <Input addItem={this.addItem}/>
         </div>
         <main className='main'>
