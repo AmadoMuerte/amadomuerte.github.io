@@ -32,3 +32,19 @@
     margin-left: 20px;
     flex: 1 0 0;
 }
+
+@media (max-width: 1200px) {
+    .list__item {
+        margin-top: 8px;
+        padding: 5px;
+    }
+    
+}
+
+@media (max-width: 570px) {
+    .list__item {
+        max-width: 350px;
+        font-size: 25px;
+    }
+    
+}

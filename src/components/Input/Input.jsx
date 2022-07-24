@@ -36,7 +36,7 @@ class Input extends Component {
   render() {
 
     return (
-      <div>
+      <div className='header__input'>
         <input 
           className='input' 
           type= {'text'} 

@@ -59,7 +59,7 @@ class App extends Component {
   render() {
     let {data} = this.state
     return (
-      <div>
+      <>
         <div className='header'>
           <Input addItem={this.addItem}/>
         </div>
@@ -70,7 +70,7 @@ class App extends Component {
             onComplete={this.onComplete}/>
           {this.updateStorage()}
         </main>
-      </div>
+      </>
       
     );
   }

@@ -3,9 +3,11 @@
 .list {
     margin-top: 10px;
     list-style-type: none;
+    user-select: none;
 }
 
 .list-item__nothing {
+    user-select: none;
     margin-top: 10px;
     text-align: center;
     font-size: 30px;

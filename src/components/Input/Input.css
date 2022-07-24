@@ -12,3 +12,9 @@
     background-color: rgb(178, 230, 164);
 }
 
+@media (max-width: 1200px) {
+    .input {
+        font-size: 25px;
+    }
+    
+}
