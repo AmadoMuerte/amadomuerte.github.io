@@ -52,7 +52,7 @@ class ListItem extends Component {
       <li 
         className={classLi} 
         onClick={this.onComplete} 
-        onMouseEnter={this.onMouseOver}
+        onMouseOver={this.onMouseOver}
         onMouseLeave={this.onMouseEnter}>
 
         <p className={classDescription}>{this.props.item.value}</p>
