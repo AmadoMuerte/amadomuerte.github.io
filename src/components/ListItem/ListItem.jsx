@@ -1,37 +1,66 @@
-import React from 'react';
+
 import ButtonDelete from '../buttons/ButtonDelete';
 
 import './ListItem.css';
 
-const ListItem = (props) => {
+import React, { Component } from 'react';
 
-  let onDelete = () => {
-    let id = props.item.id;
-    return props.delete(id);
+class ListItem extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hoverClass: 'hoverClass'
+    }
   }
 
-  let onComplete = () => {
-    let id = props.item.id;
-    let complete = props.item.complete
-    props.onComplete(id, !complete);
+  onDelete = () => {
+    let id = this.props.item.id;
+    return this.props.delete(id);
   }
 
-  let classDescription = '';
-  let classLi = 'list__item';
-
-  if (props.item.complete) {
-    classDescription += 'list__item--complete';
-    classLi += ' list__item-bg';
+  onComplete = () => {
+    let id = this.props.item.id;
+    let complete = this.props.item.complete
+    this.props.onComplete(id, !complete);
   }
+
+  onMouseEnter = () => {
+    this.setState({
+      hoverClass: 'hoverClass'
+    })
+  }
+
+  onMouseOver = () => {
+    this.setState({
+      hoverClass: ''
+    })
+  }
+
+  render() {
+    
+    let classDescription = '';
+    let classLi = 'list__item';
+
+    if (this.props.item.complete) {
+      classDescription += 'list__item--complete';
+      classLi += ' list__item-bg';
+    }
+    
+    let hoverClass = this.state.hoverClass
 
     return (
-      
-      <li className={classLi} onClick={onComplete}>
-        <p className={classDescription}>{props.item.value}</p>
-        
-        <ButtonDelete delete={onDelete} />
+      <li 
+        className={classLi} 
+        onClick={this.onComplete} 
+        onMouseEnter={this.onMouseOver}
+        onMouseLeave={this.onMouseEnter}>
+
+        <p className={classDescription}>{this.props.item.value}</p>
+        <div className={hoverClass}>
+          <ButtonDelete delete={this.onDelete} />
+        </div>
       </li>
-      
     );
+  }
 }
-  export default ListItem;
+export default ListItem;

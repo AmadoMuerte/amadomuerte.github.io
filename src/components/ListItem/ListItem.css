@@ -33,6 +33,10 @@
     flex: 1 0 0;
 }
 
+.hoverClass {
+    display: none;
+}
+
 @media (max-width: 1200px) {
     .list__item {
         margin-top: 8px;
