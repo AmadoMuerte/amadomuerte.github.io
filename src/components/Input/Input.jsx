@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ButtonAdd from '../buttons/ButtonAdd';
+import ButtonAdd from '../buttons/ButtonAdd/ButtonAdd';
 
 import './Input.css';
 

@@ -37,10 +37,16 @@
     display: none;
 }
 
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 @media (max-width: 1200px) {
     .list__item {
         margin-top: 8px;
-        padding: 5px;
+        padding: 5px 5px 10px 5px;
     }
     
 }

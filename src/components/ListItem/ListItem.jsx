@@ -1,15 +1,16 @@
 
-import ButtonDelete from '../buttons/ButtonDelete';
+import ButtonDelete from '../buttons/ButtonDelete/ButtonDelete';
 
 import './ListItem.css';
 
 import React, { Component } from 'react';
+import ButtonEdit from '../buttons/ButtonEdit/ButtonEdit';
 
 class ListItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hoverClass: 'hoverClass'
+      hoverClass: 'hoverClass',
     }
   }
 
@@ -32,7 +33,8 @@ class ListItem extends Component {
 
   onMouseOver = () => {
     this.setState({
-      hoverClass: ''
+      hoverClass: 'buttons'
+
     })
   }
 
@@ -48,6 +50,8 @@ class ListItem extends Component {
     
     let hoverClass = this.state.hoverClass
 
+
+
     return (
       <li 
         className={classLi} 
@@ -57,6 +61,7 @@ class ListItem extends Component {
 
         <p className={classDescription}>{this.props.item.value}</p>
         <div className={hoverClass}>
+          <ButtonEdit />
           <ButtonDelete delete={this.onDelete} />
         </div>
       </li>
