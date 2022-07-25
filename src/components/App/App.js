@@ -58,12 +58,15 @@ class App extends Component {
 
   render() {
     let {data} = this.state
+
     return (
       <>
+      
         <div className='header'>
           <p>Todo - list</p>
           <Input addItem={this.addItem}/>
         </div>
+        
         <main className='main'>
           <TodoList 
             data={data} 
@@ -71,6 +74,7 @@ class App extends Component {
             onComplete={this.onComplete}/>
           {this.updateStorage()}
         </main>
+        
       </>
       
     );

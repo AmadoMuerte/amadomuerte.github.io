@@ -2,6 +2,7 @@ import React from 'react';
 
 import './TodoList.css'; 
 import  ListItem from '../ListItem/ListItem';
+import Navigation from '../Navigation/Navigation';
 
 const TodoList = (props) => {
 
@@ -29,6 +30,7 @@ const TodoList = (props) => {
 
   return (
     <ul className='list'>
+      <Navigation />
         {items}
     </ul>
   );
