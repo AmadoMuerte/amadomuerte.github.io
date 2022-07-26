@@ -19,7 +19,7 @@ class App extends Component {
     if (str) {
       let id = Math.floor(Math.random() * 500) + value;
 
-      let item = {value: value, id: id, complete: false}
+      let item = {value: value, id: id, complete: false, favorite: false}
       this.setState(({data}) => {
         const newArr = [item, ...data];
         return {data: newArr}
@@ -50,6 +50,20 @@ class App extends Component {
      })
   }
 
+  onFavorite = (id, favorite) => {
+    this.setState(({data}) => {
+
+      let newArr = data.map(item => {
+        if (item.id === id) {
+          item.favorite = favorite
+        }
+        return item;
+      })
+
+      return {data: newArr}
+    })
+  }
+
   updateStorage = () => {
     const data = JSON.stringify(this.state.data);
     localStorage.setItem(`items`, data);
@@ -71,7 +85,8 @@ class App extends Component {
           <TodoList 
             data={data} 
             delete={this.onDelete} 
-            onComplete={this.onComplete}/>
+            onComplete={this.onComplete}
+            onFavorite={this.onFavorite}/>
           {this.updateStorage()}
         </main>
         
@@ -80,5 +95,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;

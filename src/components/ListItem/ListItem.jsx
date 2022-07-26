@@ -5,6 +5,7 @@ import './ListItem.css';
 
 import React, { Component } from 'react';
 import ButtonEdit from '../buttons/ButtonEdit/ButtonEdit';
+import ButtonFavorites from '../buttons/ButtonFavorites/ButtonFavorites';
 
 class ListItem extends Component {
   constructor(props) {
@@ -38,6 +39,12 @@ class ListItem extends Component {
     })
   }
 
+  onFavorite = () => {
+    let id = this.props.item.id;
+    let favorite = this.props.item.favorite
+    this.props.onFavorite(id, !favorite);
+  }
+
   render() {
     
     let classDescription = '';
@@ -49,18 +56,24 @@ class ListItem extends Component {
     }
     
     let hoverClass = this.state.hoverClass
-
-
+    
+    let classFavorite = '';
+    if (this.props.item.favorite) {
+      classFavorite += ' classFavorite';
+    }
 
     return (
       <li 
         className={classLi} 
-        onClick={this.onComplete} 
         onMouseOver={this.onMouseOver}
         onMouseLeave={this.onMouseEnter}>
+        <p 
+          className={classDescription}
+          onClick={this.onComplete}>
+            {this.props.item.value}</p>
 
-        <p className={classDescription}>{this.props.item.value}</p>
         <div className={hoverClass}>
+          <ButtonFavorites  favorite={this.onFavorite} classFavorite={classFavorite}/>
           <ButtonEdit />
           <ButtonDelete delete={this.onDelete} />
         </div>

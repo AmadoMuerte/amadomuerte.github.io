@@ -14,6 +14,10 @@ const TodoList = (props) => {
     props.onComplete(id, complete);
   }
 
+  let onFavorite = (id, favorite) => {
+    props.onFavorite(id, favorite);
+  }
+
   let items;
 
   if (props.data.length >= 1) {
@@ -22,7 +26,8 @@ const TodoList = (props) => {
               item={item} 
               key={item.id} 
               delete={onDelete} 
-              onComplete={onComplete}/>
+              onComplete={onComplete}
+              onFavorite={onFavorite}/>
     });
   } else {
     items = <p className='list-item__nothing'>в вашем списке ничего нет.</p>

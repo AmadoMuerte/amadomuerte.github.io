@@ -1,28 +1,33 @@
-.btnEdit {
+.btnFavorites {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: inherit;
     width: 22px;
     height: 22px;
+    padding: 6px;
+    border: none;
     cursor: pointer;
     margin-right: 5px;
-    padding: 5px;
-    border: none;
     border-radius: 50%;
     background-color: white;
     transition: 0.1s;
 }
 
-.btnEdit:hover {
+.btnFavorites:hover {
     border: 1px solid grey;
+    
+}
+
+.classFavorite {
+    background-color: rgb(85, 212, 212);
 }
 
 
 @media (max-width: 600px) {
-    .btnEdit {
+    .btnFavorites {
         width: 30px;
         height: 30px;
-        padding: 6px;
+        padding: 8px;
     }
 }
