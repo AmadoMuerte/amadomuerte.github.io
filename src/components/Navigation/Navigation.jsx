@@ -1,28 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './Navigation.css';
 
-class Navigation extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+const Navigation = (props) => {
 
-        }
-    }
-
-
-    render() {
-
-
-        return (
-            <div className='navigation'>
-                <div className='navigation__buttons'>
-                    <button>все</button>
-                    <button>избранное</button>
-                </div>
+    return (
+        
+        <div className='navigation'>
+            <div className='navigation__buttons'>
+                <button onClick={props.allItems}>все</button>
+                <button onClick={props.favoriteItems}>избранное</button>
             </div>
-        );
-    }
+        </div>
+        
+    );
 }
 
 export default Navigation;
+

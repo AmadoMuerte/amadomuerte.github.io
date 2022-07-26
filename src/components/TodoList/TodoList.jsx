@@ -18,25 +18,59 @@ const TodoList = (props) => {
     props.onFavorite(id, favorite);
   }
 
-  let items;
+  let handleAllItems = () => {
+    props.items('all');
+  }
 
-  if (props.data.length >= 1) {
-    items = props.data.map(item => {
+  let handleFavoriteItems = () => {
+    props.items('favorites');
+  }
+
+  let allItems = () => {
+    
+    let items = props.data.map(item => {
+    return <ListItem 
+            item={item} 
+            key={item.id} 
+            delete={onDelete} 
+            onComplete={onComplete}
+            onFavorite={onFavorite}/>
+    })
+    return items;
+  }
+
+  let favoriteItems = () => {
+    let items = props.data.filter(item => item.favorite);
+
+    items = items.map(item => {
       return <ListItem 
-              item={item} 
-              key={item.id} 
-              delete={onDelete} 
-              onComplete={onComplete}
-              onFavorite={onFavorite}/>
-    });
-  } else {
-    items = <p className='list-item__nothing'>в вашем списке ничего нет.</p>
+                item={item} 
+                key={item.id} 
+                delete={onDelete} 
+                onComplete={onComplete}
+                onFavorite={onFavorite}/>
+      })
+    return items;
+  }
+
+  let items = () => {
+    let items;
+    if (props.itemsNav === 'all') {
+        items = allItems();
+    } else if (props.itemsNav === 'favorites') {
+        items = favoriteItems();
+    }
+
+    if (items == false) {
+      return <p className='list-item__nothing'>Здесь пусто</p>
+    }
+    return items;
   }
 
   return (
     <ul className='list'>
-      <Navigation />
-        {items}
+      <Navigation allItems={handleAllItems} favoriteItems={handleFavoriteItems}/>
+        {items()}
     </ul>
   );
 }

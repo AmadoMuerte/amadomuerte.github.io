@@ -10,6 +10,7 @@ class App extends Component {
     let storage = JSON.parse(localStorage.getItem('items'));
     this.state = {
       data:  storage || [],
+      items: 'all'
     }
   }
 
@@ -22,7 +23,10 @@ class App extends Component {
       let item = {value: value, id: id, complete: false, favorite: false}
       this.setState(({data}) => {
         const newArr = [item, ...data];
-        return {data: newArr}
+        return {
+          data: newArr,
+          items: 'all'
+        }
       });
     }
   }
@@ -69,6 +73,12 @@ class App extends Component {
     localStorage.setItem(`items`, data);
   }
 
+  switchItems = (items) => {
+    this.setState({
+      items: items
+    });
+  }
+
 
   render() {
     let {data} = this.state
@@ -83,6 +93,8 @@ class App extends Component {
         
         <main className='main'>
           <TodoList 
+            items={this.switchItems}
+            itemsNav={this.state.items}
             data={data} 
             delete={this.onDelete} 
             onComplete={this.onComplete}
@@ -95,6 +107,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;

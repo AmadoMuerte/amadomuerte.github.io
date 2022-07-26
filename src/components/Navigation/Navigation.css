@@ -10,9 +10,9 @@
     width: 130px;
     border: none;
     font-size: 20px;
-    color: rgb(62, 65, 65);
+    color: rgb(255, 255, 255);
     padding: 5px 20px;
-    background-color:rgb(219, 220, 219);
+    background-color:rgb(186, 190, 186);
     margin-right: 30px;
     border-radius: 10px;
     transition: 0.1s;
@@ -22,3 +22,4 @@
 .navigation button:hover {
     box-shadow: 2px 2px 5px rgb(172, 171, 171);
 }
+
