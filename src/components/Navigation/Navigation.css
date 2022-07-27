@@ -11,7 +11,7 @@
     border: none;
     font-size: 20px;
     color: rgb(255, 255, 255);
-    padding: 5px 20px;
+    padding: 4px;
     background-color:rgb(186, 190, 186);
     margin-right: 30px;
     border-radius: 10px;
@@ -23,3 +23,15 @@
     box-shadow: 2px 2px 5px rgb(172, 171, 171);
 }
 
+
+@media (max-width: 600px) {
+    .navigation button {
+        width: 110px;
+        font-size: 15px;
+        margin-right: 10px;
+    }
+
+    .navigation {
+        margin-right: -10px;
+    }
+}

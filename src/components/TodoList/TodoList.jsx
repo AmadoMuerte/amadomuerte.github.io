@@ -26,6 +26,11 @@ const TodoList = (props) => {
     props.items('favorites');
   }
 
+  let handleCompliteItems = () => {
+    props.items('complites');
+  }
+
+
   let allItems = () => {
     
     let items = props.data.map(item => {
@@ -53,23 +58,48 @@ const TodoList = (props) => {
     return items;
   }
 
+  let compliteItems = () => {
+    let items = props.data.filter(item => item.complete);
+
+    items = items.map(item => {
+      return <ListItem 
+                item={item} 
+                key={item.id} 
+                delete={onDelete} 
+                onComplete={onComplete}
+                onFavorite={onFavorite}/>
+      })
+    return items;
+  }
+
   let items = () => {
     let items;
     if (props.itemsNav === 'all') {
         items = allItems();
     } else if (props.itemsNav === 'favorites') {
         items = favoriteItems();
+    } else if (props.itemsNav === 'complites') {
+      items = compliteItems();
     }
 
     if (items == false) {
-      return <p className='list-item__nothing'>Здесь пусто</p>
+      return <p className='list-item__nothing'>у вас нет заметок</p>
     }
     return items;
   }
 
+  let navigation;
+  if (props.data.length !== 0) {
+    navigation = <Navigation 
+                  allItems={handleAllItems} 
+                  favoriteItems={handleFavoriteItems} 
+                  compliteItems={handleCompliteItems}/>
+  }
+
   return (
     <ul className='list'>
-      <Navigation allItems={handleAllItems} favoriteItems={handleFavoriteItems}/>
+      {navigation}
+
         {items()}
     </ul>
   );

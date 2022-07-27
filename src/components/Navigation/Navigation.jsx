@@ -10,6 +10,7 @@ const Navigation = (props) => {
             <div className='navigation__buttons'>
                 <button onClick={props.allItems}>все</button>
                 <button onClick={props.favoriteItems}>избранное</button>
+                <button onClick={props.compliteItems}>выполнено</button>
             </div>
         </div>
         
