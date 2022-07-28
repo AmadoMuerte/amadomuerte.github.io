@@ -3,6 +3,8 @@ import React from 'react';
 import './TodoList.css'; 
 import  ListItem from '../ListItem/ListItem';
 import Navigation from '../Navigation/Navigation';
+import Input from '../Input/Input';
+
 
 const TodoList = (props) => {
 
@@ -30,6 +32,9 @@ const TodoList = (props) => {
     props.items('complites');
   }
 
+  let handleShowAddForm = () => {
+    props.handleShowAddForm();
+  }
 
   let allItems = () => {
     
@@ -44,7 +49,7 @@ const TodoList = (props) => {
     return items;
   }
 
-  let favoriteItems = () => {
+  let favoriteItems = () => { 
     let items = props.data.filter(item => item.favorite);
 
     items = items.map(item => {
@@ -81,27 +86,48 @@ const TodoList = (props) => {
     } else if (props.itemsNav === 'complites') {
       items = compliteItems();
     }
-
+    
     if (items == false) {
-      return <p className='list-item__nothing'>у вас нет заметок</p>
+      return <p className='list-item__nothing'>у вас нет заметок</p> 
+      
     }
     return items;
   }
 
-  let navigation;
-  if (props.data.length !== 0) {
-    navigation = <Navigation 
-                  allItems={handleAllItems} 
-                  favoriteItems={handleFavoriteItems} 
-                  compliteItems={handleCompliteItems}/>
+
+  let classForm = 'addForm';
+  let classMain = '';
+  if (props.showAddForm) {
+    classForm += ' addFormShow'
+    classMain += 'list__main-blur'
+  } else {
+    classForm = 'addForm'
+
+    classMain = ''
   }
 
   return (
     <ul className='list'>
-      {navigation}
-
+      <div className={classMain}>
+        
+        <Navigation 
+          allItems={handleAllItems} 
+          favoriteItems={handleFavoriteItems} 
+          compliteItems={handleCompliteItems}
+          showAddForm={handleShowAddForm}/>
         {items()}
+      </div>
+      
+      <div className={classForm}>
+        <Input addItem={props.addItem}/>
+        <button className='buttonBack' onClick={handleShowAddForm}>
+          x
+        </button>
+      </div>
     </ul>
+    
+    
+
   );
 }
 

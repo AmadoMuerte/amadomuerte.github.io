@@ -4,6 +4,10 @@ import './Navigation.css';
 
 const Navigation = (props) => {
 
+    let showAddForm = () => {
+        props.showAddForm();
+    }
+
     return (
         
         <div className='navigation'>
@@ -12,6 +16,7 @@ const Navigation = (props) => {
                 <button onClick={props.favoriteItems}>избранное</button>
                 <button onClick={props.compliteItems}>выполнено</button>
             </div>
+            <div className='navigation__btnAdd' onClick={showAddForm}/>
         </div>
         
     );

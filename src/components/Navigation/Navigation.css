@@ -1,26 +1,38 @@
 .navigation {
-    margin: 5px 5px 15px 0px;
+    padding: 7px 7px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin-right: -30px;
+}
+.navigation__buttons {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .navigation button {
-    width: 130px;
+    width: 120px;
     border: none;
     font-size: 20px;
     color: rgb(255, 255, 255);
     padding: 4px;
-    background-color:rgb(186, 190, 186);
-    margin-right: 30px;
+    background-color:#F2A5EE;
     border-radius: 10px;
-    transition: 0.1s;
+    transition: 0.2s;
     cursor: pointer;
 }
 
 .navigation button:hover {
-    box-shadow: 2px 2px 5px rgb(172, 171, 171);
+    background-color: #AA95BF;
+}
+
+.navigation__btnAdd {
+    width: 28px;
+    height: 33px;
+    color: white;
+    background-color: rgb(249, 249, 249);
+    mask-image: url("./square-plus-solid.svg");
+    cursor: pointer;
 }
 
 
@@ -35,3 +47,4 @@
         margin-right: -10px;
     }
 }
+

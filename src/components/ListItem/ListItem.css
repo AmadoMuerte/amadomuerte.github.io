@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 
 .list__item {
+    
+    height: 40px;
     margin-top: 10px;
     font-size: 20px;
-    color: white;
-    padding: 10px;
-    background-color: rgb(185, 185, 185);
+    color: rgb(160, 155, 155);
+    padding: 5px;
+    background-color: #F2E2A5;
     border-radius: 15px;
     display: flex;
     align-items: center;
-    max-width: 500px;
-    box-shadow: 5px 2px 4px rgb(187, 184, 184);
     transition: 0.3s;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
 .list__item-bg {
-    background-color: rgb(165, 207, 152);
+    background-color: #C7BE6A;
 }
 
 .list__item--complete {
@@ -25,7 +25,8 @@
 }
 
 .list__item:hover {
-    box-shadow: 2px 2px 5px rgb(131, 131, 131);
+    background-color: #C7BE6A;
+    box-shadow: 2px 2px 5px rgb(42, 42, 42);
 }
 
 .list__item p {

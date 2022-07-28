@@ -1,5 +1,5 @@
 .btn-add {
-    background-color: rgb(185, 185, 185);
+    background-color:#F2A5EE;
     color: white;
     padding: 5px 10px;
     font-size: 30px;
@@ -7,6 +7,7 @@
     border: none;
     cursor: pointer;
     transition: 0.3s;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .btn-add:hover {

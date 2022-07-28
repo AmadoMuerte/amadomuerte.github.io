@@ -1,14 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+SC&display=swap');
 
 .list {
+    position: relative;
+    overflow: auto;
+    margin: 0 auto;
     margin-top: 10px;
     list-style-type: none;
     user-select: none;
-    background-color: rgb(244, 234, 248);
-    padding: 10px;
-    max-width: 600px;
+    background-color: #61215ea8;
+    padding: 10px 30px;
+    max-width: 900px;
     min-height: 500px;
+    max-height: 500px;
     border-radius: 20px;
+    
+
+}
+
+.list__main-blur {
+    filter: blur(3px);
+    pointer-events: none;
 }
 
 .list-item__nothing {
@@ -20,6 +31,47 @@
     text-shadow: 1px 1px 2px black;
     font-family: 'Roboto Condensed', sans-serif;
 }
+
+.addForm {
+    position: relative;
+    top: 0px;
+    left: 0px;
+
+    left: 200px;
+    top: 50px;
+    padding: 20px;
+    justify-content: center;
+    width: 500px;
+    height: 200px;
+    border-radius: 10px;
+    background-color:#aa95bff0;
+    position: absolute;
+    display: none;
+}
+
+.addFormShow {
+    display: flex;
+}
+
+.buttonBack {
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    margin: 8px;
+    padding-bottom: 4px;
+    line-height: 0px;
+    border: none;
+    border-radius: 50%;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    color: rgb(148, 145, 145);
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
 
 @media (max-width: 650px) {
     .list {

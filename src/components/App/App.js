@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Input from '../Input/Input';
 import TodoList from '../TodoList/TodoList';
 
 class App extends Component {
@@ -10,7 +9,8 @@ class App extends Component {
     let storage = JSON.parse(localStorage.getItem('items'));
     this.state = {
       data:  storage || [],
-      items: 'all'
+      items: 'all',
+      showAddForm: false
     }
   }
 
@@ -79,6 +79,13 @@ class App extends Component {
     });
   }
 
+  showAddForm = () => {
+    this.setState({
+      showAddForm: !this.state.showAddForm
+    })
+  }
+
+//<Input addItem={this.addItem}/> 
 
   render() {
     let {data} = this.state
@@ -88,17 +95,23 @@ class App extends Component {
       
         <div className='header'>
           <p>Todo - list</p>
-          <Input addItem={this.addItem}/>
+         
         </div>
         
         <main className='main'>
+          
           <TodoList 
             items={this.switchItems}
             itemsNav={this.state.items}
             data={data} 
             delete={this.onDelete} 
             onComplete={this.onComplete}
-            onFavorite={this.onFavorite}/>
+            onFavorite={this.onFavorite}
+            addItem={this.addItem}
+            handleShowAddForm={this.showAddForm}
+            showAddForm={this.state.showAddForm}
+            />
+
           {this.updateStorage()}
         </main>
         
@@ -109,3 +122,8 @@ class App extends Component {
 }
 
 export default App;
+
+
+
+
+
