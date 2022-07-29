@@ -126,8 +126,6 @@ const TodoList = (props) => {
       </div>
     </ul>
     
-    
-
   );
 }
 

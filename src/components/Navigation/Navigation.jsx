@@ -16,7 +16,7 @@ const Navigation = (props) => {
                 <button onClick={props.favoriteItems}>избранное</button>
                 <button onClick={props.compliteItems}>выполнено</button>
             </div>
-            <div className='navigation__btnAdd' onClick={showAddForm}/>
+            <div className='navigation__showForm' onClick={showAddForm}/>
         </div>
         
     );

@@ -26,13 +26,17 @@
     background-color: #AA95BF;
 }
 
-.navigation__btnAdd {
+.navigation__showForm {
     width: 28px;
     height: 33px;
-    color: white;
     background-color: rgb(249, 249, 249);
     mask-image: url("./square-plus-solid.svg");
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.navigation__showForm:hover {
+    background-color: #AA95BF;
 }
 
 
