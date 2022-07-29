@@ -2,7 +2,7 @@
     background-color:#F2A5EE;
     color: white;
     padding: 5px 10px;
-    font-size: 30px;
+    font-size: 25px;
     border-radius: 0px 20px 20px 0px;
     border: none;
     cursor: pointer;
@@ -11,7 +11,7 @@
 }
 
 .btn-add:hover {
-    background-color: rgb(154, 151, 151);
+    background-color: #f2a5eeb1;
 }
 
 @media (max-width: 1200px) {

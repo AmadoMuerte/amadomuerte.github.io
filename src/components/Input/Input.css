@@ -2,19 +2,12 @@
     background-color: #F2E2A5;
     color: white;
     border: none;
-    font-size: 30px;
+    font-size: 25px;
     padding: 5px 10px;
     border-radius: 20px 0px 0px 20px;
     transition: 0.3s;
     font-family: 'Roboto Condensed', sans-serif;
 }
-.input:hover {
-    background-color: rgb(178, 230, 164);
-}
-
-
-
-
 
 @media (max-width: 1200px) {
     .input {
