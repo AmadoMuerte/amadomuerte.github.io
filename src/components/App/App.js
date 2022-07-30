@@ -85,8 +85,6 @@ class App extends Component {
     })
   }
 
-//<Input addItem={this.addItem}/> 
-
   render() {
     let {data} = this.state
 
