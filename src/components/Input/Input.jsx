@@ -45,7 +45,9 @@ class Input extends Component {
           onKeyDown= {this.onKeyDown}
           value = {this.state.value}
         />
-        <ButtonAdd addItem= {this.addItem}/>
+        <ButtonAdd 
+          addItem= {this.addItem} 
+          handleShowAddForm={this.props.handleShowAddForm}/>
       </div>
     );
   }
