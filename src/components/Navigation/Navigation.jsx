@@ -1,4 +1,5 @@
 import React from 'react';
+import ButtonShowForm from '../buttons/ButtonShowForm/ButtonShowForm';
 
 import './Navigation.css';
 
@@ -16,7 +17,7 @@ const Navigation = (props) => {
                 <button onClick={props.favoriteItems}>избранное</button>
                 <button onClick={props.compliteItems}>выполнено</button>
             </div>
-            <div className='navigation__showForm' onClick={showAddForm}/>
+            <ButtonShowForm showAddForm={showAddForm}/>
         </div>
         
     );

@@ -1,0 +1,20 @@
+.addForm {
+    position: relative;
+    top: 0px;
+    left: 0px;
+
+    left: 200px;
+    top: 50px;
+    padding: 20px;
+    justify-content: center;
+    width: 500px;
+    height: 200px;
+    border-radius: 10px;
+    background-color:#aa95bff0;
+    position: absolute;
+    display: none;
+}
+
+.addFormShow {
+    display: flex;
+}

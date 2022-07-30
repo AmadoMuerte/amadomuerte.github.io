@@ -13,8 +13,6 @@
     min-height: 500px;
     max-height: 500px;
     border-radius: 20px;
-    
-
 }
 
 .list__main-blur {
@@ -30,27 +28,6 @@
     color: rgb(209, 220, 214);
     text-shadow: 1px 1px 2px black;
     font-family: 'Roboto Condensed', sans-serif;
-}
-
-.addForm {
-    position: relative;
-    top: 0px;
-    left: 0px;
-
-    left: 200px;
-    top: 50px;
-    padding: 20px;
-    justify-content: center;
-    width: 500px;
-    height: 200px;
-    border-radius: 10px;
-    background-color:#aa95bff0;
-    position: absolute;
-    display: none;
-}
-
-.addFormShow {
-    display: flex;
 }
 
 .buttonBack {

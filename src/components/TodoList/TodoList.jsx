@@ -3,7 +3,7 @@ import React from 'react';
 import './TodoList.css'; 
 import  ListItem from '../ListItem/ListItem';
 import Navigation from '../Navigation/Navigation';
-import Input from '../Input/Input';
+import ItemForm from '../ItemForm/ItemForm';
 
 
 const TodoList = (props) => {
@@ -117,13 +117,10 @@ const TodoList = (props) => {
           showAddForm={handleShowAddForm}/>
         {items()}
       </div>
-      
-      <div className={classForm}>
-        <Input addItem={props.addItem}/>
-        <button className='buttonBack' onClick={handleShowAddForm}>
-          x
-        </button>
-      </div>
+      <ItemForm 
+        handleShowAddForm={handleShowAddForm} 
+        addItem={props.addItem}
+        classForm={classForm}/>
     </ul>
     
   );
