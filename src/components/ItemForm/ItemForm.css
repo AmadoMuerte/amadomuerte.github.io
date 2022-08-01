@@ -1,8 +1,7 @@
 .addForm {
-    position: relative;
     top: 0px;
     left: 0px;
-
+    display: flex;
     left: 28%;
     top: 50px;
     padding: 20px;
@@ -12,46 +11,6 @@
     border-radius: 10px;
     background-color:#aa95bff0;
     position: absolute;
-    display: none;
     flex-direction: column;
     align-items: center;
-}
-
-.addFormShow {
-    display: flex;
-}
-
-.form-date {
-    margin-top: 20px;
-    width: 200px;
-    height: 30px;
-    padding: 15px;
-    font-size: 20px;
-    border: none;
-    border-radius: 20px 20px 20px 20px;
-    transition: 0.3s;
-    font-family: 'Roboto Condensed', sans-serif;
-}
-
-.buttonBack {
-    top: 0;
-    right: 0;
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    margin: 8px;
-    padding-bottom: 4px;
-    line-height: 0px;
-    border: none;
-    border-radius: 50%;
-    font-size: 25px;
-    font-weight: 700;
-    text-align: center;
-    color: rgb(148, 145, 145);
-    background-color: rgb(255, 255, 255);
-    cursor: pointer;
-}
-
-.buttonBack:hover {
-    box-shadow: 1px 1px 7px rgb(82, 81, 81);
 }

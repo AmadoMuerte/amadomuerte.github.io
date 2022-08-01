@@ -94,15 +94,14 @@ const TodoList = (props) => {
     return items;
   }
 
-
-  let classForm = 'addForm';
+  let showForm;
   let classMain = '';
   if (props.showAddForm) {
-    classForm += ' addFormShow'
     classMain += 'list__main-blur'
+    showForm = <ItemForm 
+                  handleShowAddForm={handleShowAddForm} 
+                  addItem={props.addItem}/>
   } else {
-    classForm = 'addForm'
-
     classMain = ''
   }
 
@@ -117,10 +116,7 @@ const TodoList = (props) => {
           showAddForm={handleShowAddForm}/>
         {items()}
       </div>
-      <ItemForm 
-        handleShowAddForm={handleShowAddForm} 
-        addItem={props.addItem}
-        classForm={classForm}/>
+      {showForm}
     </ul>
     
   );

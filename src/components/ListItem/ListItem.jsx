@@ -6,6 +6,7 @@ import './ListItem.css';
 import React, { Component } from 'react';
 import ButtonEdit from '../buttons/ButtonEdit/ButtonEdit';
 import ButtonFavorites from '../buttons/ButtonFavorites/ButtonFavorites';
+import TodoShow from '../TodoShow/TodoShow';
 
 class ListItem extends Component {
   constructor(props) {
@@ -69,16 +70,25 @@ class ListItem extends Component {
         onMouseLeave={this.onMouseEnter}>
         <p 
           className={classDescription}
-          onClick={this.onComplete}>
-            {this.props.item.value}</p>
+          >
 
+            {this.props.item.value}
+
+        </p>
+        
         <div className={hoverClass}>
           <ButtonFavorites  favorite={this.onFavorite} classFavorite={classFavorite}/>
           <ButtonEdit />
           <ButtonDelete delete={this.onDelete} />
         </div>
+        
       </li>
     );
   }
 }
 export default ListItem;
+
+//<TodoShow date={this.props.item.date}/>
+
+
+// this.onComplete

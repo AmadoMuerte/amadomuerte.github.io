@@ -14,13 +14,13 @@ class App extends Component {
     }
   }
 
-  addItem = (value) => {
+  addItem = (value, date) => {
     let str = value.replace(/\s+/g, '');
     
     if (str) {
       let id = Math.floor(Math.random() * 500) + value;
 
-      let item = {value: value, id: id, complete: false, favorite: false}
+      let item = {value: value, id: id, date: date, complete: false, favorite: false}
       this.setState(({data}) => {
         const newArr = [item, ...data];
         return {

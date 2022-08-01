@@ -1,19 +1,18 @@
 import React from 'react';
 import './ItemForm.css';
 import Input from '../Input/Input';
+import InputDate from '../InputDate/InputDate';
+import ButtonBack from '../buttons/ButtonBack/ButtonBack';
 
 const ItemForm = (props) => {
 
     return (
-        <div className={props.classForm}>
+        <div className='addForm'>
             <Input 
                 addItem={props.addItem} 
                 handleShowAddForm={props.handleShowAddForm}/>
-            <button className='buttonBack' onClick={props.handleShowAddForm}>
-                x
-            </button>
-            <input className='form-date' type='date'/>
-            
+            <ButtonBack handleShowAddForm={props.handleShowAddForm}/>
+            <InputDate />
         </div>
     );
 }

@@ -22,7 +22,6 @@ class Input extends Component {
   }
 
   addItem = () => {
-    
     this.props.addItem(this.state.value);
     this.handleClear();
   }
