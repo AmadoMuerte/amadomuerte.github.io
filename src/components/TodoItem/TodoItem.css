@@ -38,10 +38,6 @@
     cursor: pointer;
 }
 
-.hoverClass {
-    display: none;
-}
-
 .buttons {
     margin-left: 8px;
     display: flex;

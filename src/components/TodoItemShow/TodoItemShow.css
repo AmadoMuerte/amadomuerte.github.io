@@ -1,4 +1,5 @@
 .todoItemShow {
+    font-family: 'Roboto Condensed', sans-serif;
     top: 0px;
     left: 0px;
     display: flex;
@@ -17,6 +18,14 @@
 }
 
 .todoItemShow p {
+    padding: 7px;
     font-size: 25px;
+    margin-bottom: -10px;
     color: white;
+    background-color: #61215ea8; 
+    border-radius: 20px;
+}
+
+.buttons {
+    margin-top: 15px;
 }

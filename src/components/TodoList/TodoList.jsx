@@ -121,9 +121,12 @@ const TodoList = (props) => {
     showItem = 
       <TodoItemShow 
         item={item} 
+        delete={onDelete}
+        onFavorite={onFavorite}
+        complete={onComplete}
         handleShowAddForm={handleShowItem}/>
   }
-  
+
   return (
     <ul className='list'>
       <div className={classMain}>
