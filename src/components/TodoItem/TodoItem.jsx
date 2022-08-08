@@ -1,18 +1,16 @@
+import React, { Component } from 'react';
+import './TodoItem.css';
 
 import ButtonDelete from '../buttons/ButtonDelete/ButtonDelete';
-
-import './ListItem.css';
-
-import React, { Component } from 'react';
 import ButtonEdit from '../buttons/ButtonEdit/ButtonEdit';
 import ButtonFavorites from '../buttons/ButtonFavorites/ButtonFavorites';
-import TodoShow from '../TodoShow/TodoShow';
 
-class ListItem extends Component {
+
+class TodoItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hoverClass: 'hoverClass',
+      hoverClass: 'hoverClass'
     }
   }
 
@@ -46,6 +44,10 @@ class ListItem extends Component {
     this.props.onFavorite(id, !favorite);
   }
 
+  todoItemShow = () => {
+    this.props.todoItemShow(this.props.item);
+  }
+
   render() {
     
     let classDescription = '';
@@ -69,26 +71,28 @@ class ListItem extends Component {
         onMouseOver={this.onMouseOver}
         onMouseLeave={this.onMouseEnter}>
         <p 
+          onClick={this.todoItemShow}
           className={classDescription}
           >
 
             {this.props.item.value}
-
         </p>
         
         <div className={hoverClass}>
           <ButtonFavorites  favorite={this.onFavorite} classFavorite={classFavorite}/>
           <ButtonEdit />
           <ButtonDelete delete={this.onDelete} />
+          
         </div>
+        
         
       </li>
     );
   }
 }
-export default ListItem;
+export default TodoItem;
 
-//<TodoShow date={this.props.item.date}/>
+//
 
 
 // this.onComplete

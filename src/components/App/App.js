@@ -10,7 +10,11 @@ class App extends Component {
     this.state = {
       data:  storage || [],
       items: 'all',
-      showAddForm: false
+      showAddForm: false,
+      showItem: {
+        switch: false,
+        item: []
+      }
     }
   }
 
@@ -20,7 +24,15 @@ class App extends Component {
     if (str) {
       let id = Math.floor(Math.random() * 500) + value;
 
-      let item = {value: value, id: id, date: date, complete: false, favorite: false}
+      let item = 
+        {
+          value: value, 
+          id: id, 
+          date: date, 
+          complete: false, 
+          favorite: false
+        }
+        
       this.setState(({data}) => {
         const newArr = [item, ...data];
         return {
@@ -85,6 +97,15 @@ class App extends Component {
     })
   }
 
+  swithShowItem = (item) => {
+    this.setState({
+      showItem: {
+        switch: !this.state.showItem.switch,
+        item: item
+      }
+    })
+  }
+
   render() {
     let {data} = this.state
 
@@ -108,6 +129,8 @@ class App extends Component {
             addItem={this.addItem}
             handleShowAddForm={this.showAddForm}
             showAddForm={this.state.showAddForm}
+            swithShowItem={this.swithShowItem}
+            showItem={this.state.showItem}
             />
 
           {this.updateStorage()}
@@ -125,7 +148,7 @@ export default App;
 /*
   1) переделать показ инпута на компонент +
   2) добавить строку даты где по умолчанию будет стоять сегодняшняя
-  3) сделать окно с красивой надписью таска 
+  3) сделать окно с красивой надписью таска +
   4) перенести все кнопки редактирования, удаления в окно с таском
   5) добавить кружок на таске по нажатию которого таск будет выполнен
   6) пересмотреть весь код на написание адекватных названий переменных

@@ -2,9 +2,11 @@ import React from 'react';
 import ButtonBack from '../buttons/ButtonBack/ButtonBack';
 import InputDate from '../InputDate/InputDate';
 
-const TodoShow = (props) => {
+import './TodoItemShow.css';
+
+const TodoItemShow = (props) => {
     return (
-        <div>
+        <div className='todoItemShow'>
             <p>{props.item.value}</p>
             <InputDate date={props.item.date}/>
             <ButtonBack handleShowAddForm={props.handleShowAddForm}/>
@@ -12,4 +14,4 @@ const TodoShow = (props) => {
     );
 }
 
-export default TodoShow;
+export default TodoItemShow;

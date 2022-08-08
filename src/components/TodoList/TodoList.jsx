@@ -1,9 +1,10 @@
 import React from 'react';
 
 import './TodoList.css'; 
-import  ListItem from '../ListItem/ListItem';
+import  ListItem from '../TodoItem/TodoItem';
 import Navigation from '../Navigation/Navigation';
 import ItemForm from '../ItemForm/ItemForm';
+import TodoItemShow from '../TodoItemShow/TodoItemShow';
 
 
 const TodoList = (props) => {
@@ -36,22 +37,27 @@ const TodoList = (props) => {
     props.handleShowAddForm();
   }
 
+  let handleShowItem = () => {
+    props.swithShowItem();
+  }
+
   let allItems = () => {
-    
     let items = props.data.map(item => {
     return <ListItem 
             item={item} 
             key={item.id} 
             delete={onDelete} 
             onComplete={onComplete}
-            onFavorite={onFavorite}/>
+            onFavorite={onFavorite}
+            handleShowAddForm={handleShowAddForm}
+            todoItemShow={todoItemShow}/>
+
     })
     return items;
   }
 
   let favoriteItems = () => { 
     let items = props.data.filter(item => item.favorite);
-
     items = items.map(item => {
       return <ListItem 
                 item={item} 
@@ -65,7 +71,6 @@ const TodoList = (props) => {
 
   let compliteItems = () => {
     let items = props.data.filter(item => item.complete);
-
     items = items.map(item => {
       return <ListItem 
                 item={item} 
@@ -94,17 +99,31 @@ const TodoList = (props) => {
     return items;
   }
 
-  let showForm;
-  let classMain = '';
-  if (props.showAddForm) {
-    classMain += 'list__main-blur'
-    showForm = <ItemForm 
-                  handleShowAddForm={handleShowAddForm} 
-                  addItem={props.addItem}/>
-  } else {
-    classMain = ''
+  let todoItemShow = (item) => {
+    props.swithShowItem(item);
   }
 
+  let classMain = '';
+
+  let showForm;
+  if (props.showAddForm) {
+    classMain += 'list__main-blur'
+    showForm = 
+      <ItemForm 
+        handleShowAddForm={handleShowAddForm} 
+        addItem={props.addItem}/>
+  }
+
+  let showItem;
+  if (props.showItem.switch) {
+    let item = props.showItem.item;
+    classMain += 'list__main-blur'
+    showItem = 
+      <TodoItemShow 
+        item={item} 
+        handleShowAddForm={handleShowItem}/>
+  }
+  
   return (
     <ul className='list'>
       <div className={classMain}>
@@ -117,9 +136,10 @@ const TodoList = (props) => {
         {items()}
       </div>
       {showForm}
+      {showItem}
+      {}
     </ul>
     
   );
 }
-
 export default TodoList;
