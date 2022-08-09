@@ -41,6 +41,24 @@ const TodoList = (props) => {
     props.swithShowItem();
   }
 
+  
+  let items = () => {
+    let items;
+    if (props.itemsNav === 'all') {
+        items = allItems();
+    } else if (props.itemsNav === 'favorites') {
+        items = favoriteItems();
+    } else if (props.itemsNav === 'complites') {
+      items = compliteItems();
+    }
+    
+    if (items == false) {
+      return <p className='list-item__nothing'>у вас нет заметок</p> 
+      
+    }
+    return items;
+  }
+
   let allItems = () => {
     let items = props.data.map(item => {
     return <ListItem 
@@ -82,27 +100,6 @@ const TodoList = (props) => {
     return items;
   }
 
-  let items = () => {
-    let items;
-    if (props.itemsNav === 'all') {
-        items = allItems();
-    } else if (props.itemsNav === 'favorites') {
-        items = favoriteItems();
-    } else if (props.itemsNav === 'complites') {
-      items = compliteItems();
-    }
-    
-    if (items == false) {
-      return <p className='list-item__nothing'>у вас нет заметок</p> 
-      
-    }
-    return items;
-  }
-
-  let todoItemShow = (item) => {
-    props.swithShowItem(item);
-  }
-
   let classMain = '';
 
   let showForm;
@@ -112,6 +109,11 @@ const TodoList = (props) => {
       <ItemForm 
         handleShowAddForm={handleShowAddForm} 
         addItem={props.addItem}/>
+  }
+
+
+  let todoItemShow = (item) => {
+    props.swithShowItem(item);
   }
 
   let showItem;

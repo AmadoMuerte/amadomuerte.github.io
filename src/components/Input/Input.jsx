@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ButtonAdd from '../buttons/ButtonAdd/ButtonAdd';
 
 import './Input.css';
 
@@ -10,32 +9,20 @@ class Input extends Component {
       value:  '',
     }
   }
-  
-  handleClear = (e) => {
-    this.setState({
-      value: ''
-    })
-  }
 
   onChangeValue = (e) => {
     this.setState({value: e.target.value});
-  }
-
-  addItem = () => {
-    this.props.addItem(this.state.value);
-    this.handleClear();
+    this.props.getValue(this.state.value);
   }
 
   onKeyDown = (e) => {
     if (e.code === 'Enter') {
-      this.addItem()
+      this.getValue()
     }
   }
 
   render() {
-
     return (
-      <div className='header__input'>
         <input 
           className='input' 
           type= {'text'} 
@@ -44,10 +31,6 @@ class Input extends Component {
           onKeyDown= {this.onKeyDown}
           value = {this.state.value}
         />
-        <ButtonAdd 
-          addItem= {this.addItem} 
-          handleShowAddForm={this.props.handleShowAddForm}/>
-      </div>
     );
   }
 }

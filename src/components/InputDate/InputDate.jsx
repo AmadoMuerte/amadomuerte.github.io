@@ -8,23 +8,25 @@ class InputDate extends Component {
             value: ''
         }
     }
+
     changeValue =(e) => {
         this.setState({
-            value: e.value
+            value: e.target.value
         })
+        this.getDate();
     }
 
-    addDate = () => {   
-        this.props.addDate(this.state.value);
+    getDate = () => {   
+        this.props.getDate(this.state.value);
     }
 
     render() {
-
         return (
             <input 
+                placeholder='введите дату'
                 className='form-date' 
-                type='date' 
-                onChange={this.changeValue} 
+                type='input' 
+                onChange={this.changeValue}
                 value={this.state.value}/>
         );
     }

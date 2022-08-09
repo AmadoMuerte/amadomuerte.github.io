@@ -3,7 +3,6 @@ import React from 'react';
 import ButtonBack from '../buttons/ButtonBack/ButtonBack';
 import ButtonDelete from '../buttons/ButtonDelete/ButtonDelete';
 import ButtonFavorites from '../buttons/ButtonFavorites/ButtonFavorites';
-import InputDate from '../InputDate/InputDate';
 
 import './TodoItemShow.css';
 
@@ -29,7 +28,7 @@ const TodoItemShow = (props) => {
   return (
     <div className='todoItemShow'>
       <p>{props.item.value}</p>
-      <InputDate date={props.item.date} />
+      <input type='input' defaultValue={props.item.date} className='form-date'/>
       <ButtonBack handleShowAddForm={props.handleShowAddForm} />
       <div className="buttons">
         <ButtonFavorites
