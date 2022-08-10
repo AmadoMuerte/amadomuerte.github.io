@@ -1,10 +1,13 @@
 import React from 'react';
 import './ButtonShowForm.css';
 
-const ButtonShowForm = (props) => {
-    return (
-        <div className='navigation__showForm' onClick={props.showAddForm}/>
-    );
+const ButtonShowForm = ({showAddForm}) => {
+  return (
+    <div 
+      className='navigation__showForm' 
+      onClick={showAddForm} 
+    />
+  );
 }
 
 export default ButtonShowForm;

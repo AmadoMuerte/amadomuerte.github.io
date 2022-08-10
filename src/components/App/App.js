@@ -72,20 +72,19 @@ class App extends Component {
         }
         return item;
       })
-
       return {data: newArr}
     })
   };
 
   updateStorage = () => {
     const data = JSON.stringify(this.state.data);
-    localStorage.setItem(`items`, data);
+    localStorage.setItem(`items`, data)
   };
 
   switchItems = (items) => {
     this.setState({
       items: items
-    });
+    })
   };
 
   showAddForm = () => {
@@ -108,14 +107,10 @@ class App extends Component {
 
     return (
       <>
-      
         <div className='header'>
           <p>Todo - list</p>
-         
         </div>
-        
         <main className='main'>
-          
           <TodoList 
             items={this.switchItems}
             itemsNav={this.state.items}
@@ -128,23 +123,19 @@ class App extends Component {
             showAddForm={this.state.showAddForm}
             swithShowItem={this.swithShowItem}
             showItem={this.state.showItem}
-            />
-
+          />
           {this.updateStorage()}
         </main>
-        
       </>
-      
-    );
+    )
   }
-}
+};
 
 export default App;
 
 
 /*
   1) переделать показ инпута на компонент +
-  2) добавить строку даты где по умолчанию будет стоять сегодняшняя 
   3) сделать окно с красивой надписью таска +
   4) перенести все кнопки редактирования, удаления в окно с таском +
   5) добавить кружок на таске по нажатию которого таск будет выполнен +

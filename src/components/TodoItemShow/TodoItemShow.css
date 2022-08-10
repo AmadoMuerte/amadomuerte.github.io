@@ -18,7 +18,8 @@
 }
 
 .todoItemShow p {
-    padding: 7px;
+    width: 350px;
+    padding: 7px 15px;
     font-size: 25px;
     margin-bottom: -10px;
     color: white;

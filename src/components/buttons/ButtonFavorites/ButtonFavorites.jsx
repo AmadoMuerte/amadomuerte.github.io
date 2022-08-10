@@ -1,22 +1,23 @@
 import React from 'react';
 
 import './ButtonFavorites.css';
-import image  from './bookmark-solid.svg';
+import image from './bookmark-solid.svg';
 
-const ButtonFavorites = (props) => {
+const ButtonFavorites = ({classFavorite, favorite}) => {
 
-    let classes = 'btnFavorites';
+  let classes = 'btnFavorites';
+  if (classFavorite) {
+    classes = 'btnFavorites' + classFavorite;
+  }
 
-    if (props.classFavorite) {
-        classes = 'btnFavorites' + props.classFavorite;
-    }
-    
-
-    return (
-        <div className={classes} onClick={props.favorite}>
-            <img src={image} alt="" />
-        </div>
-    );
+  return (
+    <div 
+      className={classes} 
+      onClick={favorite}
+    >
+      <img src={image} alt="" />
+    </div>
+  );
 }
 
 export default ButtonFavorites;

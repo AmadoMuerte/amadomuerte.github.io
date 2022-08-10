@@ -23,14 +23,14 @@ class Input extends Component {
 
   render() {
     return (
-        <input 
-          className='input' 
-          type= {'text'} 
-          placeholder= {'...'} 
-          onChange= {this.onChangeValue}
-          onKeyDown= {this.onKeyDown}
-          value = {this.state.value}
-        />
+      <input 
+        className='input' 
+        type= {'text'} 
+        placeholder= {'...'} 
+        onChange= {this.onChangeValue}
+        onKeyDown= {this.onKeyDown}
+        value = {this.state.value}
+      />
     );
   }
 }

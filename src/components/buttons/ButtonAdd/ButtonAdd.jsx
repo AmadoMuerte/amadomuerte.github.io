@@ -12,7 +12,8 @@ const ButtonAdd = (props) => {
   return (
     <button 
       className='btn-add' 
-      onClick={btnClick}>
+      onClick={btnClick}
+    >
       +
     </button>
   );

@@ -6,17 +6,16 @@ function TodoItem (props) {
 
   let todoItemShow = () => {
     props.todoItemShow(props.item);
-  }
+  };
 
   let onComplete = () => {
     let id = props.item.id;
     let complete = props.item.complete
     props.onComplete(id, !complete);
-  }
+  };
 
   let classDescription = '';
   let classLi = 'list__item';
-
   let classComplete = false;
 
   if (props.item.complete) {
@@ -26,14 +25,14 @@ function TodoItem (props) {
   }
   
   return (
-    <li 
-      className={classLi}>
-      <p 
-        onClick={todoItemShow}
-        className={classDescription}>
-          {props.item.value}
+    <li className={classLi}>
+      <p className={classDescription} onClick={todoItemShow}>
+        {props.item.value}
       </p>
-      <Complete onComplete={onComplete} class={classComplete}/>
+      <Complete 
+        onComplete={onComplete} 
+        class={classComplete}
+      />
     </li>
   );
 }

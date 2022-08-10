@@ -19,34 +19,36 @@ class ItemForm extends Component {
     this.setState({
       value: value
     })
-  }
+  };
 
   getDate = (date) => {
     this.setState({
       date: date
     })
-  }
+  };
 
   addItem = () => {
     let value = this.state.value
     let date = this.state.date
     this.props.addItem(value, date);
-  }
+  };
 
   render() {
+    let {handleShowAddForm} = this.props
     return (
       <div className='addForm'>
         <div>
           <Input
             getValue={this.getValue}
-            handleShowAddForm={this.props.handleShowAddForm} />
+            handleShowAddForm={handleShowAddForm} 
+          />
           <ButtonAdd
             addItem={this.addItem}
-            handleShowAddForm={this.props.handleShowAddForm} />
+            handleShowAddForm={handleShowAddForm} 
+          />
         </div>
-        <ButtonBack handleShowAddForm={this.props.handleShowAddForm} />
-        <InputDate
-          getDate={this.getDate} />
+        <ButtonBack handleShowAddForm={handleShowAddForm}/>
+        <InputDate getDate={this.getDate}/>
       </div>
     );
   }

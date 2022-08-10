@@ -59,31 +59,34 @@ const TodoList = (props) => {
 
   let allItems = () => {
     let items = props.data.map(item => {
-    return <ListItem 
-            item={item} 
-            key={uuidv4()} 
-            delete={onDelete} 
-            onComplete={onComplete}
-            onFavorite={onFavorite}
-            handleShowAddForm={handleShowAddForm}
-            todoItemShow={todoItemShow}
-            />
-
+    return (
+      <ListItem 
+        item={item} 
+        key={uuidv4()} 
+        delete={onDelete} 
+        onComplete={onComplete}
+        onFavorite={onFavorite}
+        handleShowAddForm={handleShowAddForm}
+        todoItemShow={todoItemShow}
+      />
+    )
     })
     return items;
-  }
+  };
 
   let favoriteItems = () => { 
     let items = props.data.filter(item => item.favorite);
     items = items.map(item => {
-      return <ListItem 
-                item={item} 
-                key={item.id} 
-                delete={onDelete} 
-                onComplete={onComplete}
-                onFavorite={onFavorite}
-                todoItemShow={todoItemShow}
-              />
+      return (
+        <ListItem 
+          item={item} 
+          key={item.id} 
+          delete={onDelete} 
+          onComplete={onComplete}
+          onFavorite={onFavorite}
+          todoItemShow={todoItemShow}
+        />
+      )
       })
     return items;
   }
@@ -91,14 +94,16 @@ const TodoList = (props) => {
   let compliteItems = () => {
     let items = props.data.filter(item => item.complete);
     items = items.map(item => {
-      return <ListItem 
-                item={item} 
-                key={item.id} 
-                delete={onDelete} 
-                onComplete={onComplete}
-                onFavorite={onFavorite}
-                todoItemShow={todoItemShow}
-              />
+      return (
+        <ListItem 
+          item={item} 
+          key={item.id} 
+          delete={onDelete} 
+          onComplete={onComplete}
+          onFavorite={onFavorite}
+          todoItemShow={todoItemShow}
+        />
+      )
       })
     return items;
   };
