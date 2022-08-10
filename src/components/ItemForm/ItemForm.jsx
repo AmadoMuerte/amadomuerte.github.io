@@ -31,7 +31,6 @@ class ItemForm extends Component {
     let value = this.state.value
     let date = this.state.date
     this.props.addItem(value, date);
-    console.log(value, date)
   }
 
   render() {

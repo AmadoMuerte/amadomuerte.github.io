@@ -6,42 +6,42 @@ import Navigation from '../Navigation/Navigation';
 import ItemForm from '../ItemForm/ItemForm';
 import TodoItemShow from '../TodoItemShow/TodoItemShow';
 
+import { v4 as uuidv4 } from 'uuid';
 
 const TodoList = (props) => {
 
   let onDelete = (id) => {
-    props.delete(id);
-  }
+    props.delete(id)
+  };
 
   let onComplete = (id, complete) => {
-    props.onComplete(id, complete);
-  }
+    props.onComplete(id, complete)
+  };
 
   let onFavorite = (id, favorite) => {
-    props.onFavorite(id, favorite);
-  }
+    props.onFavorite(id, favorite)
+  };
 
   let handleAllItems = () => {
-    props.items('all');
-  }
+    props.items('all')
+  };
 
   let handleFavoriteItems = () => {
-    props.items('favorites');
-  }
+    props.items('favorites')
+  };
 
   let handleCompliteItems = () => {
-    props.items('complites');
-  }
+    props.items('complites')
+  };
 
   let handleShowAddForm = () => {
-    props.handleShowAddForm();
-  }
+    props.handleShowAddForm()
+  };
 
   let handleShowItem = () => {
-    props.swithShowItem();
-  }
+    props.swithShowItem()
+  };
 
-  
   let items = () => {
     let items;
     if (props.itemsNav === 'all') {
@@ -51,24 +51,23 @@ const TodoList = (props) => {
     } else if (props.itemsNav === 'complites') {
       items = compliteItems();
     }
-    
     if (items == false) {
       return <p className='list-item__nothing'>у вас нет заметок</p> 
-      
     }
     return items;
-  }
+  };
 
   let allItems = () => {
     let items = props.data.map(item => {
     return <ListItem 
             item={item} 
-            key={item.id} 
+            key={uuidv4()} 
             delete={onDelete} 
             onComplete={onComplete}
             onFavorite={onFavorite}
             handleShowAddForm={handleShowAddForm}
-            todoItemShow={todoItemShow}/>
+            todoItemShow={todoItemShow}
+            />
 
     })
     return items;
@@ -82,7 +81,9 @@ const TodoList = (props) => {
                 key={item.id} 
                 delete={onDelete} 
                 onComplete={onComplete}
-                onFavorite={onFavorite}/>
+                onFavorite={onFavorite}
+                todoItemShow={todoItemShow}
+              />
       })
     return items;
   }
@@ -95,26 +96,27 @@ const TodoList = (props) => {
                 key={item.id} 
                 delete={onDelete} 
                 onComplete={onComplete}
-                onFavorite={onFavorite}/>
+                onFavorite={onFavorite}
+                todoItemShow={todoItemShow}
+              />
       })
     return items;
-  }
+  };
 
   let classMain = '';
-
   let showForm;
   if (props.showAddForm) {
     classMain += 'list__main-blur'
     showForm = 
       <ItemForm 
         handleShowAddForm={handleShowAddForm} 
-        addItem={props.addItem}/>
-  }
-
+        addItem={props.addItem}
+      />
+  };
 
   let todoItemShow = (item) => {
     props.swithShowItem(item);
-  }
+  };
 
   let showItem;
   if (props.showItem.switch) {
@@ -126,23 +128,23 @@ const TodoList = (props) => {
         delete={onDelete}
         onFavorite={onFavorite}
         complete={onComplete}
-        handleShowAddForm={handleShowItem}/>
-  }
+        handleShowAddForm={handleShowItem}
+      />
+  };
 
   return (
     <ul className='list'>
       <div className={classMain}>
-        
         <Navigation 
           allItems={handleAllItems} 
           favoriteItems={handleFavoriteItems} 
           compliteItems={handleCompliteItems}
-          showAddForm={handleShowAddForm}/>
+          showAddForm={handleShowAddForm}
+        />
         {items()}
       </div>
       {showForm}
       {showItem}
-      {}
     </ul>
     
   );

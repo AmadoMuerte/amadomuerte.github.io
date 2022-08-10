@@ -12,12 +12,12 @@ class Input extends Component {
 
   onChangeValue = (e) => {
     this.setState({value: e.target.value});
-    this.props.getValue(this.state.value);
+    this.props.getValue(e.target.value);
   }
 
   onKeyDown = (e) => {
     if (e.code === 'Enter') {
-      this.getValue()
+      this.props.getValue()
     }
   }
 

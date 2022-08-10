@@ -13,11 +13,7 @@ class InputDate extends Component {
         this.setState({
             value: e.target.value
         })
-        this.getDate();
-    }
-
-    getDate = () => {   
-        this.props.getDate(this.state.value);
+        this.props.getDate(e.target.value);
     }
 
     render() {

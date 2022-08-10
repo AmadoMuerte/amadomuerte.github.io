@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import TodoList from '../TodoList/TodoList';
+import { v4 as uuidv4 } from 'uuid';
 
 class App extends Component {
   constructor(props) {
@@ -20,10 +21,8 @@ class App extends Component {
 
   addItem = (value, date) => {
     let str = value.replace(/\s+/g, '');
-    
     if (str) {
-      let id = Math.floor(Math.random() * 500) + value;
-
+      let id = uuidv4();
       let item = 
         {
           value: value, 
@@ -32,16 +31,15 @@ class App extends Component {
           complete: false, 
           favorite: false
         }
-        
       this.setState(({data}) => {
         const newArr = [item, ...data];
         return {
           data: newArr,
           items: 'all'
         }
-      });
+      })
     }
-  }
+  };
 
   onDelete = (id) => {
     this.setState(({data}) => {
@@ -50,7 +48,7 @@ class App extends Component {
        })
        return {data: newArr}
       })
-  }
+  };
 
   onComplete = (id, complete) => {
     this.setState(({data}) => {
@@ -61,10 +59,9 @@ class App extends Component {
         }
         return item;
       })
-
       return {data: newArr}
      })
-  }
+  };
 
   onFavorite = (id, favorite) => {
     this.setState(({data}) => {
@@ -78,24 +75,24 @@ class App extends Component {
 
       return {data: newArr}
     })
-  }
+  };
 
   updateStorage = () => {
     const data = JSON.stringify(this.state.data);
     localStorage.setItem(`items`, data);
-  }
+  };
 
   switchItems = (items) => {
     this.setState({
       items: items
     });
-  }
+  };
 
   showAddForm = () => {
     this.setState({
       showAddForm: !this.state.showAddForm
     })
-  }
+  };
 
   swithShowItem = (item) => {
     this.setState({
@@ -147,7 +144,7 @@ export default App;
 
 /*
   1) переделать показ инпута на компонент +
-  2) добавить строку даты где по умолчанию будет стоять сегодняшняя
+  2) добавить строку даты где по умолчанию будет стоять сегодняшняя 
   3) сделать окно с красивой надписью таска +
   4) перенести все кнопки редактирования, удаления в окно с таском +
   5) добавить кружок на таске по нажатию которого таск будет выполнен +
