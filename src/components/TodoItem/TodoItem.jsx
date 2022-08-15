@@ -23,11 +23,17 @@ function TodoItem (props) {
     classLi += ' list__item-bg';
     classComplete = true
   }
-  
+
+  let value = [...props.item.value];
+  if (value.length > 20) {
+    value = value.splice(0, 20);
+    value[20] = ('...');
+  }
+
   return (
     <li className={classLi}>
       <p className={classDescription} onClick={todoItemShow}>
-        {props.item.value}
+        {value}
       </p>
       <Complete 
         onComplete={onComplete} 

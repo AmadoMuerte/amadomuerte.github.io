@@ -51,7 +51,7 @@ const TodoList = (props) => {
     } else if (props.itemsNav === 'complites') {
       items = compliteItems();
     }
-    if (items == false) {
+    if (items.length === 0) {
       return <p className='list-item__nothing'>у вас нет заметок</p> 
     }
     return items;
