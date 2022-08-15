@@ -25,10 +25,14 @@ const TodoItemShow = (props) => {
       classFavorite += ' classFavorite';
     };
 
-  let defaultDate = 'Нет даты'
+  let defaultDate;
   if (props.item.date) {
     defaultDate = props.item.date;
   };
+
+  let func = (e) => {
+
+  }
 
   let {handleShowAddForm} = props
   return (
@@ -38,6 +42,7 @@ const TodoItemShow = (props) => {
         type='input' 
         defaultValue={defaultDate} 
         className='form-date'
+        placeholder='Нет даты'
       />
       <ButtonBack handleShowAddForm={handleShowAddForm}/>
       <div className="buttons">
