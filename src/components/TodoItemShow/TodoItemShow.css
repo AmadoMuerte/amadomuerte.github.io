@@ -1,20 +1,13 @@
 .todoItemShow {
     font-family: 'Roboto Condensed', sans-serif;
-    top: 0px;
-    left: 0px;
     display: flex;
-    left: 28%;
-    top: 50px;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
     justify-content: center;
-    width: 400px;
-    min-height: 150px;
     border-radius: 10px;
     background-color:#aa95bff0;
     position: absolute;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
 }
 
 .todoItemShow p {
@@ -25,57 +18,41 @@
     color: white;
     background-color: #61215ea8; 
     border-radius: 20px;
+    margin-top: 30px;
 }
 
 .buttons {
     margin-top: 15px;
+    
 }
 
-.form-date {
+.item-form-date {
     margin-top: 20px;
     width: 200px;
-    height: 30px;
+    height: 40px;
     padding: 15px;
     font-size: 20px;
     border: none;
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 10px;
     transition: 0.3s;
     font-family: 'Roboto Condensed', sans-serif;
     text-align: center;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 520px) {
     .todoItemShow {
-        width: 300px
+        width: 350px;
+    }
+    .todoItemShow p {
+        width: 300px;
+    }
+}
+
+@media (max-width: 400px) {
+    .todoItemShow {
+        width: 300px;
     }
     .todoItemShow p {
         width: 250px;
-    }
-}
-
-@media (max-width: 650px) {
-    .todoItemShow {
-        left: 23%;
-    }
-}
-
-@media (max-width: 580px) {
-    .todoItemShow {
-        width: 250px;
-        left: 20%;
-    }
-    .todoItemShow p {
-        font-size: 20px;
-        width: 230px;
-    }
-    .form-date {
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 460px) {
-    .todoItemShow {
-        width: 250px;
-        left: 17%;
     }
 }

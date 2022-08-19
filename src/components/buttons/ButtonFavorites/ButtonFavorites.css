@@ -8,7 +8,7 @@
     padding: 6px;
     border: none;
     cursor: pointer;
-    margin-right: 5px;
+    margin-right: 20px;
     border-radius: 50%;
     background-color: #ffffff;
     transition: 0.1s;
@@ -22,7 +22,6 @@
 .classFavorite {
     background-color: #F2A5EE;
 }
-
 
 @media (max-width: 600px) {
     .btnFavorites {

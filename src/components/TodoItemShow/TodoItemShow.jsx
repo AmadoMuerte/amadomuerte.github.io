@@ -30,10 +30,6 @@ const TodoItemShow = (props) => {
     defaultDate = props.item.date;
   };
 
-  let func = (e) => {
-
-  }
-
   let {handleShowAddForm} = props
   return (
     <div className='todoItemShow'>
@@ -41,7 +37,7 @@ const TodoItemShow = (props) => {
       <input 
         type='input' 
         defaultValue={defaultDate} 
-        className='form-date'
+        className='item-form-date'
         placeholder='Нет даты'
       />
       <ButtonBack handleShowAddForm={handleShowAddForm}/>

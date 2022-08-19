@@ -148,8 +148,11 @@ const TodoList = (props) => {
         />
         {items()}
       </div>
-      {showForm}
-      {showItem}
+      <div className='addForm'>
+        {showForm}
+        {showItem}
+      </div>
+      
     </ul>
     
   );

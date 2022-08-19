@@ -1,12 +1,24 @@
 .form-date {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 200px;
-    height: 30px;
+    height: 40px;
     padding: 15px;
     font-size: 20px;
     border: none;
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 10px;
     transition: 0.3s;
     font-family: 'Roboto Condensed', sans-serif;
     text-align: center;
+}
+
+@media (max-width: 520px) {
+    .form-date {
+        width: 180px
+    }
+}
+
+@media (max-width: 400px) {
+    form-date {
+        width: 150px;
+    }
 }

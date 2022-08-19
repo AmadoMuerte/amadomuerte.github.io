@@ -1,4 +1,5 @@
 .input {
+    width: 300px;
     background-color: #61215ea8; 
     color: white;
     border: none;
@@ -9,17 +10,8 @@
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 520px) {
     .input {
-        font-size: 20px;
-    }
-    
-}
-
-@media (max-width: 580px) {
-    .input {
-        margin-top: 20px;
-        width: 180px;
-        height: 40px;
+        width: 200px;
     }
 }

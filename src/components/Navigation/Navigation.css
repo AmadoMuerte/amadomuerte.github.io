@@ -29,10 +29,9 @@
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 860px) {
     .navigation button {
         width: 110px;
-        font-size: 15px;
         margin-right: 10px;
     }
 
@@ -41,3 +40,8 @@
     }
 }
 
+@media (max-width: 500px) {
+    .navigation button {
+        font-size: 17px;
+    }
+}

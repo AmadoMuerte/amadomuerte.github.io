@@ -36,7 +36,7 @@ class ItemForm extends Component {
   render() {
     let {handleShowAddForm} = this.props
     return (
-      <div className='addForm'>
+      <div className='form'>
         <div>
           <Input
             getValue={this.getValue}
