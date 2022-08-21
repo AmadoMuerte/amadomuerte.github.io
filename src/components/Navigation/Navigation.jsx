@@ -3,14 +3,33 @@ import React from 'react';
 import './Navigation.css';
 import ButtonShowForm from '../buttons/ButtonShowForm/ButtonShowForm';
 
+import useSound from 'use-sound';
+
+import navSound from '../../sound/navSound.mp3';
+
 const Navigation = (props) => {
+
+  const [play] = useSound(navSound);
 
   let showAddForm = () => {
     props.showAddForm();
   }
+  
+  let allItems = () => {
+    props.allItems();
+    play();
+  }
 
+  let favoriteItems = () => {
+    props.favoriteItems();
+    play();
+  }
 
-  let {allItems, favoriteItems, compliteItems} = props;
+  let compliteItems = () => {
+    props.compliteItems();
+    play();
+  }
+
   return (
 
     <div className='navigation'>

@@ -1,11 +1,18 @@
+
 import React from 'react';
 import Complete from '../buttons/Complete/Complete';
 import './TodoItem.css';
 
+import useSound from 'use-sound';
+import showItemSound from '../../sound/show-todoItem.mp3';
+
 function TodoItem (props) {
+
+  const [play] = useSound(showItemSound);
 
   let todoItemShow = () => {
     props.todoItemShow(props.item);
+    play();
   };
 
   let onComplete = () => {

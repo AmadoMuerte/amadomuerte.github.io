@@ -2,6 +2,10 @@ import React from 'react';
 
 import './Complete.css';
 
+import useSound from 'use-sound';
+
+import completeSound from '../../../sound/complete-sound.mp3'; 
+
 const Complete = (props) => {
 
   let classes = 'complete-btn ';
@@ -9,11 +13,19 @@ const Complete = (props) => {
     classes += 'complete';
   }
 
-  return (
+  const [play] = useSound(completeSound);
 
+  let pushBtn = () => {
+    props.onComplete();
+    if (classes === 'complete-btn ') {
+      play();
+    }
+  }
+
+  return (
     <button 
       className={classes}
-      onClick={props.onComplete}>
+      onClick={pushBtn}>
     </button>
   );
 }
